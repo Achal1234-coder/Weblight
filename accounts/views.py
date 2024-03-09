@@ -32,6 +32,7 @@ def login(request):
                                         context = {'messgae':'OTP send successfully on your phone no', 'status': 'Success'}
                                         return Response(context, status=status.HTTP_200_OK)
                                 except Exception as e:
+                                        print(e)
                                         context = {'message': 'Please make sure your phone number is registered on Twilio to get messages on phone', 'status': 'Information'}
                                         return Response(context, status=status.HTTP_200_OK)
 
@@ -58,7 +59,7 @@ def register(request):
                                 context = {'message': 'Phone number or username not provided', 'status': 'Error'}
                                 return Response(context, status=status.HTTP_400_BAD_REQUEST)
 
-                        if (Profile.objects.filter(phone_number = phone_number).exists()):
+                        if (Profile.objects.filter(phone_number = phone_number).exists() or User.objects.filter(username=username).exists()):
                                 context = {'message': 'User already exists', 'status': 'Error'}
                                 return Response(context, status=status.HTTP_409_CONFLICT)
 

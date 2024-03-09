@@ -143,14 +143,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ACCOUNT_SID='AC69a90601c8063f50edb651057dc1f4d8'
-AUTH_TOKEN='efb1593c0528fbbb9a655c0d38de9baa'
+# You will get this variable in your twilio account
+ACCOUNT_SID='Your SID KEY'
+AUTH_TOKEN='Your Auth Token'
 COUNTRY_CODE='+91'
-TWILIO_PHONE_NUMBER='+18654659478'
+TWILIO_PHONE_NUMBER='Your Twilio Phone number'
 
 
-RAZORPAY_KEY_ID = 'rzp_test_fuFWSvLqrD4PAy'
-RAZORPAY_SECRET = '76vlYxngGc1WVszTxBsAbzbV'
+# You will find this in your rozarpay account
+RAZORPAY_KEY_ID = 'Your rozarpay key'
+RAZORPAY_SECRET = 'Your razorpay secret key'
 
 TIME_ZONE =  'Asia/Calcutta'
 USE_I18N  = True
